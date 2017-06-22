@@ -21,11 +21,11 @@ class SearchBar extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
+    // above function makes sure the standard FORM response of submit is not
+    // done. Otherwise the form will create a post request and we do not want to
+    // be send to a new page. When clicking Submit now (or pressing enter) the
+    // 'term' will stay as we typed it.
   }
-  // above function makes sure the standard form response of submit is not
-  // done. Otherwise the form will create a post request and we do not want to
-  // be send to a new page. When clicking Submit now (or pressing enter) the
-  // 'term' will stay as we typed it.
 
   render() {
     return (
