@@ -51,14 +51,9 @@ class SearchBar extends Component {
   }
 }
 
-//  anything returned from this function will end up as props on the
-// SportList container (via de CONNECT function) so
-// this.props.selectSport(sport) can be used
 function mapDispatchToProps(dispatch) {
-  // when selectSport is called, the result should be passed (dispatched) to all reducers
   return bindActionCreators({ findWeather: findWeather }, dispatch)
 }
-
 
 export default connect(null, mapDispatchToProps)(SearchBar)
 // we added NULL here since mapDispatchToProps is only entered as a second argument
