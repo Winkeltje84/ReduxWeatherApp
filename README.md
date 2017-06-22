@@ -9,9 +9,22 @@ Just getting started :-)
 - Screenshot of the React-Redux app
 UNDER CONSTRUCTION
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+## Applying new functionalities
+I am learning some new things by following this course. A little summary:
 
+- Axios: Promise based HTTP client for the browser and node.js.
+
+This is used to create an Ajax request within an action like this: const request = axios.get(url);
+The url is one customly created depending on the user input in the searchBar while the 'request' constant will be used as     a payload so the weather data will be returned by the API.
+https://www.npmjs.com/package/axios
+
+- Redux Promise: FSA-compliant promise middleware for Redux.
+
+To handle Redux promises for us. I believe this will make the use of Axios easier for me... but I have to dive deeper into this...
+https://www.npmjs.com/package/redux-promise
+
+## Familiar with Git?
+Checkout this repo, install dependencies, then start the gulp process with the following:
 ```
 > git clone git@github.com:Winkeltje84/ReduxWeatherApp.git
 > cd ReactYoutube
