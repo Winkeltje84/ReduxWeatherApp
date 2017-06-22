@@ -4,7 +4,7 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: 'test'};
+    this.state = { term: ''};
 
     this.onInputChange = this.onInputChange.bind(this)
     // above binds this to the onInputChange function since the function
@@ -14,16 +14,22 @@ class SearchBar extends Component {
   // and defines it as 'term'
 
   onInputChange(event) {
-    console.log(event.target.value)
-
     this.setState( { term: event.target.value })
     // because 'this' has been binded to the onInputChange function in th
     // constructor, we can now use setState to set the new state of 'term'
   }
 
+  onFormSubmit(event) {
+    event.preventDefault();
+  }
+  // above function makes sure the standard form response of submit is not
+  // done. Otherwise the form will create a post request and we do not want to
+  // be send to a new page. When clicking Submit now (or pressing enter) the
+  // 'term' will stay as we typed it.
+
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Pick a city and see it's 5-day weather forecast!"
           className="form-control"
