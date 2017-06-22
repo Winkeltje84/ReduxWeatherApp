@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { findWeather } from '../actions/index'
 
 class SearchBar extends Component {
   constructor(props) {
@@ -9,6 +12,7 @@ class SearchBar extends Component {
     this.onInputChange = this.onInputChange.bind(this)
     // above binds this to the onInputChange function since the function
     // originally doesn't know about 'this'
+    this.onFormSubmit = this.onFormSubmit.bind(this)
   }
   // this constructor sets the search state to an empty string at first
   // and defines it as 'term'
@@ -25,6 +29,9 @@ class SearchBar extends Component {
     // done. Otherwise the form will create a post request and we do not want to
     // be send to a new page. When clicking Submit now (or pressing enter) the
     // 'term' will stay as we typed it.
+    this.props.findWeather(this.state.term)
+    this.setState({term : ''})
+    // clears out imput as soon as onFormSubmit is clicked
   }
 
   render() {
@@ -44,5 +51,15 @@ class SearchBar extends Component {
   }
 }
 
+//  anything returned from this function will end up as props on the
+// SportList container (via de CONNECT function) so
+// this.props.selectSport(sport) can be used
+function mapDispatchToProps(dispatch) {
+  // when selectSport is called, the result should be passed (dispatched) to all reducers
+  return bindActionCreators({ findWeather: findWeather }, dispatch)
+}
 
-export default SearchBar
+
+export default connect(null, mapDispatchToProps)(SearchBar)
+// we added NULL here since mapDispatchToProps is only entered as a second argument
+// so it tells the SearchBar no state is required here
