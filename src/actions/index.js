@@ -17,6 +17,8 @@ export function findWeather(city) {
   // axios: does an ajax request (get) to the url and returns a promise
   // that promise we attach to the payload of this actioncreator
 
+  console.log('Request:', request)
+
   return {
     type: FIND_WEATHER,
     payload: request
