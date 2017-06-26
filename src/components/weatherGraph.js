@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparklines, SparklinesLine } from 'react-sparklines'
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines'
 
 export default (props) => {
   console.log('graph:', props)
@@ -7,6 +7,7 @@ export default (props) => {
     <div>
       <Sparklines data={props.data}>
         <SparklinesLine color={props.color} />
+        <SparklinesReferenceLine type="avg" />
       </Sparklines>
     </div>
   )
