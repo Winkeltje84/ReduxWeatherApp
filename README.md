@@ -7,7 +7,7 @@ Just getting started :-)
 
 ## ScreenShots
 - Screenshot of the React-Redux app
-UNDER CONSTRUCTION
+![Screenshot](https://github.com/Winkeltje84/ReduxWeatherApp/blob/master/src/images/Screenshot.png)
 
 ## Applying new functionalities
 I am learning some new things by following this course. A little summary:
@@ -27,6 +27,13 @@ https://www.npmjs.com/package/redux-promise
 
 Using this component to show graphs easily.
 https://github.com/borisyankov/react-sparklines
+
+- GoogleMaps
+
+Because <script src="https://maps.googleapis.com/maps/api/js"></script> has been added to the main index.html we can use "new google.maps.Map" in google_maps.js to create an embedded google map.
+
+See Google Maps APIs documentation:
+https://developers.google.com/maps/documentation/javascript/tutorial
 
 ## Familiar with Git?
 Checkout this repo, install dependencies, then start the gulp process with the following:
