@@ -6,7 +6,7 @@ import WeatherGraph from '../components/weatherGraph.js'
 class WeatherList extends Component {
   renderWeather(cityData) {
     const name = cityData.city.name;
-    const temperatures = cityData.list.map(weather => weather.main.temp);
+    const temperatures = cityData.list.map(weather => weather.main.temp).map(kelvin => kelvin - 273.15);
     // iterates over each list-item in the city data and picks out the temp
     const pressures = cityData.list.map(weather => weather.main.pressure);
     const humidities = cityData.list.map(weather => weather.main.humidity);
@@ -15,7 +15,7 @@ class WeatherList extends Component {
       <tr key={name}>
         <td>{name}</td>
         <td>
-          <WeatherGraph data={temperatures} color="red" units="K"/>
+          <WeatherGraph data={temperatures} color="red" units="°C"/>
         </td>
         <td>
           <WeatherGraph data={pressures} color="green" units="hPa"/>
@@ -35,7 +35,7 @@ class WeatherList extends Component {
         <thead>
           <tr>
             <th>City</th>
-            <th>Tempature (K)</th>
+            <th>Tempature (°C)</th>
             <th>Pressure (hPa)</th>
             <th>Humidity (%)</th>
           </tr>
