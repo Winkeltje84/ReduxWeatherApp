@@ -8,6 +8,8 @@ class WeatherList extends Component {
     const name = cityData.city.name;
     const temperatures = cityData.list.map(weather => weather.main.temp);
     // iterates over each list-item in the city data and picks out the temp
+    const pressures = cityData.list.map(weather => weather.main.pressure);
+    const humidities = cityData.list.map(weather => weather.main.humidity);
 
     return (
       <tr key={name}>
@@ -17,8 +19,16 @@ class WeatherList extends Component {
             <SparklinesLine color="red" />
           </Sparklines>
         </td>
-        <td></td>
-        <td></td>
+        <td>
+        <Sparklines data={pressures}>
+          <SparklinesLine color="blue" />
+        </Sparklines>
+        </td>
+        <td>
+        <Sparklines data={humidities}>
+          <SparklinesLine color="green" />
+        </Sparklines>
+        </td>
       </tr>
     )
 
@@ -32,7 +42,7 @@ class WeatherList extends Component {
           <tr>
             <th>City</th>
             <th>Tempature</th>
-            <th>Pressur</th>
+            <th>Pressure</th>
             <th>Humidity</th>
           </tr>
         </thead>
