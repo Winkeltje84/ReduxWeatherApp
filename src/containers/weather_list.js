@@ -3,15 +3,18 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 class WeatherList extends Component {
-  renderList() {
-    console.log(this)
-    return this.props.weather.map((data) =>
-    <tr key={data.city.name}>
-      <td>{data.city.name}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+  renderWeather(cityData) {
+    const name = cityData.city.name;
+    const temperatures = cityData.list.map(weather => weather.main.temp);
+    // iterates over each list-item in the city data and picks out the temp
+
+    return (
+      <tr key={name}>
+        <td>{name}</td>
+        <td>{temperatures}</td>
+        <td></td>
+        <td></td>
+      </tr>
     )
 
   }
@@ -29,7 +32,7 @@ class WeatherList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.renderList()}
+          {this.props.weather.map(this.renderWeather)}
         </tbody>
       </table>
     )
