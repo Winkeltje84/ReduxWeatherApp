@@ -1,6 +1,12 @@
 import React from 'react'
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines'
 
+function calculate_average(data) {
+  const sum = data.reduce(function(a, b) { return a + b }, 0)
+  const average = (sum / data.length)
+  return Math.round(average)
+}
+
 export default (props) => {
   console.log('graph:', props)
   return(
@@ -9,6 +15,9 @@ export default (props) => {
         <SparklinesLine color={props.color} />
         <SparklinesReferenceLine type="avg" />
       </Sparklines>
+      <div>
+        {calculate_average(props.data)}
+      </div>
     </div>
   )
 }
