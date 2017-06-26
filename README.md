@@ -15,13 +15,18 @@ I am learning some new things by following this course. A little summary:
 - Axios: Promise based HTTP client for the browser and node.js.
 
 This is used to create an Ajax request within an action like this: const request = axios.get(url);
-The url is one customly created depending on the user input in the searchBar while the 'request' constant will be used as     a payload so the weather data will be returned by the API.
+The url is one customly created depending on the user input in the searchBar while the 'request' constant will be used as a payload so the weather data will be returned by the API.
 https://www.npmjs.com/package/axios
 
 - Redux Promise: FSA-compliant promise middleware for Redux.
 
 To handle Redux promises for us. I believe this will make the use of Axios easier for me... but I have to dive deeper into this...
 https://www.npmjs.com/package/redux-promise
+
+- React Sparklines: Beautiful and expressive sparklines component for React
+
+Using this component to show graphs easily.
+https://github.com/borisyankov/react-sparklines
 
 ## Familiar with Git?
 Checkout this repo, install dependencies, then start the gulp process with the following:
