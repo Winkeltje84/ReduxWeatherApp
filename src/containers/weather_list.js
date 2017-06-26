@@ -2,8 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-export default class WeatherList extends Component {
+class WeatherList extends Component {
+  renderList() {
+    console.log(this)
+    return this.props.weather.map((data) =>
+    <tr key={data.city.name}>
+      <td>{data.city.name}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    )
+
+  }
+
   render() {
+    console.log(this)
     return(
       <table className="table table-hover">
         <thead>
@@ -14,7 +28,16 @@ export default class WeatherList extends Component {
             <th>Humidity</th>
           </tr>
         </thead>
+        <tbody>
+          {this.renderList()}
+        </tbody>
       </table>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return { weather: state.weather }
+}
+
+export default connect(mapStateToProps)(WeatherList)
