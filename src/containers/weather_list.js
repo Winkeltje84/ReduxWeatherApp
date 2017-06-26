@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Sparklines, SparklinesLine } from 'react-sparklines'
 
 class WeatherList extends Component {
   renderWeather(cityData) {
@@ -11,7 +12,11 @@ class WeatherList extends Component {
     return (
       <tr key={name}>
         <td>{name}</td>
-        <td>{temperatures}</td>
+        <td>
+          <Sparklines data={temperatures}>
+            <SparklinesLine color="red" />
+          </Sparklines>
+        </td>
         <td></td>
         <td></td>
       </tr>
