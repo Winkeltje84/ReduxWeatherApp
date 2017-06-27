@@ -38,8 +38,8 @@ https://developers.google.com/maps/documentation/javascript/tutorial
 ## Familiar with Git?
 Checkout this repo, install dependencies, then start the gulp process with the following:
 ```
-> git clone git@github.com:Winkeltje84/ReduxWeatherApp.git
-> cd ReactYoutube
+> git clone git@github.com:Winkeltje84/ReduxWeatherApp.git ReduxWeatherApp
+> cd ReaduxWeatherApp
 > npm install
 > npm start
 
